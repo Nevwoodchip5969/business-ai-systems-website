@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Practical AI Systems for UK SMEs | Business AI Systems</title>
+  <meta name="description" content="Practical, commercially focused AI systems for UK SMEs. Improve sales follow-up, customer enquiries, workflows, research and reporting with a focused pilot.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Business AI Systems">
+  <meta name="theme-color" content="#17352f">
+  <link rel="canonical" href="https://businessaisystems.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Business AI Systems">
+  <meta property="og:title" content="Practical AI systems for growing businesses">
+  <meta property="og:description" content="Straightforward, commercially focused AI systems for UK SMEs, starting with a small, focused pilot.">
+  <meta property="og:url" content="https://businessaisystems.com/">
+  <meta property="og:image" content="https://businessaisystems.com/neville-whitnall-founder.jpg">
+  <meta property="og:image:alt" content="Neville Whitnall, founder of Business AI Systems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Practical AI systems for growing businesses">
+  <meta name="twitter:description" content="Practical AI systems for UK SMEs, built around a clear business problem.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "ProfessionalService"],
+    "name": "Business AI Systems",
+    "url": "https://businessaisystems.com/",
+    "description": "Practical AI systems for growing UK businesses.",
+    "email": "neville@businessaisystems.com",
+    "telephone": "+447473531524",
+    "image": "https://businessaisystems.com/neville-whitnall-founder.jpg",
+    "founder": {
+      "@type": "Person",
+      "name": "Neville Whitnall",
+      "jobTitle": "Founder"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    "serviceType": [
+      "Sales follow-up systems",
+      "Business process automation",
+      "Customer enquiry handling",
+      "CRM and workflow organisation",
+      "AI-assisted research and reporting",
+      "Market and competitor intelligence"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+447473531524",
+      "email": "neville@businessaisystems.com",
+      "areaServed": "GB",
+      "availableLanguage": "English"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --forest: #17352f;
+      --forest-deep: #0e2722;
+      --green: #275c50;
+      --sage: #a9bca7;
+      --sage-pale: #e6ece4;
+      --cream: #f4f0e7;
+      --paper: #fbfaf6;
+      --white: #ffffff;
+      --ink: #17201d;
+      --copy: #4d5954;
+      --muted: #707a76;
+      --line: #d9ddd5;
+      --ochre: #c58d3f;
+      --serif: "Newsreader", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --shadow: 0 24px 70px rgba(14, 39, 34, .12);
+      --max: 76rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      z-index: 20;
+      inset: 0 0 auto;
+      height: 3px;
+      background: var(--ochre);
+    }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--ochre);
+      outline-offset: 3px;
+    }
+    img { max-width: 100%; }
+    button, input, textarea { font: inherit; }
+    .wrap { width: min(calc(100% - 2rem), var(--max)); margin-inline: auto; }
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: .75rem;
+      left: .75rem;
+      padding: .65rem 1rem;
+      color: var(--white);
+      background: var(--forest-deep);
+      transform: translateY(-180%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin: 0 0 1rem;
+      color: var(--green);
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 2rem; height: 1px; background: currentColor; }
+    h1, h2, h3 { margin-top: 0; }
+    h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -.035em; }
+    h1 { max-width: 12ch; margin-bottom: 1.5rem; font-size: clamp(3rem, 10vw, 6.2rem); line-height: .95; }
+    h2 { margin-bottom: 1rem; font-size: clamp(2.2rem, 6vw, 4.2rem); line-height: 1; }
+    h3 { margin-bottom: .6rem; font-size: 1.1rem; line-height: 1.3; }
+    p { margin-top: 0; }
+    .lead { max-width: 43rem; color: var(--copy); font-size: clamp(1.08rem, 2.2vw, 1.3rem); }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3.2rem;
+      padding: .78rem 1.2rem;
+      border: 1px solid var(--forest);
+      border-radius: 0;
+      color: var(--white);
+      background: var(--forest);
+      font-size: .9rem;
+      font-weight: 700;
+      line-height: 1.25;
+      text-align: center;
+      text-decoration: none;
+      transition: color .2s ease, background .2s ease, transform .2s ease;
+    }
+    .button::after { content: "→"; margin-left: .65rem; font-size: 1.1rem; }
+    .button:hover { color: var(--forest); background: transparent; transform: translateY(-2px); }
+    .button--light { border-color: var(--white); color: var(--forest); background: var(--white); }
+    .button--light:hover { color: var(--white); background: transparent; }
+    .button--text { padding-inline: 0; border: 0; color: var(--forest); background: transparent; }
+    .button--text:hover { color: var(--green); }
+
+    header { position: relative; z-index: 10; border-bottom: 1px solid var(--line); background: rgba(251, 250, 246, .97); }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 5rem; gap: 1rem; }
+    .brand { display: flex; align-items: center; gap: .75rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.1; text-decoration: none; }
+    .brand-mark { display: grid; width: 2.25rem; height: 2.25rem; place-items: center; color: var(--cream); background: var(--forest); font-family: var(--serif); font-size: .9rem; }
+    .nav-links { display: none; align-items: center; gap: 1.5rem; }
+    .nav-links > a:not(.button) { color: var(--copy); font-size: .88rem; font-weight: 600; text-decoration: none; }
+    .nav-links > a:not(.button):hover { color: var(--green); }
+
+    .hero { position: relative; overflow: hidden; padding: 4.5rem 0 3rem; }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -9rem;
+      bottom: -12rem;
+      width: 31rem;
+      height: 31rem;
+      border: 1px solid var(--sage);
+      border-radius: 50%;
+      opacity: .45;
+    }
+    .hero-grid { position: relative; z-index: 1; display: grid; gap: 3rem; }
+    .hero .lead { max-width: 37rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 2rem; }
+    .hero-note { margin: 1.25rem 0 0; color: var(--muted); font-size: .86rem; }
+    .pilot-card { position: relative; align-self: end; padding: 1.6rem; color: var(--white); background: var(--forest); box-shadow: var(--shadow); }
+    .pilot-card::before { content: "01"; position: absolute; top: 1rem; right: 1.2rem; color: var(--sage); font-family: var(--serif); font-size: 1.4rem; }
+    .pilot-card .eyebrow { color: #d7e1d4; }
+    .pilot-card h2 { max-width: 10ch; font-size: clamp(2rem, 5vw, 3rem); }
+    .pilot-card p { color: #d9e2df; }
+    .pilot-list { margin: 1.5rem 0 0; padding: 1rem 0 0; border-top: 1px solid rgba(255, 255, 255, .22); list-style: none; }
+    .pilot-list li { display: flex; gap: .7rem; padding: .32rem 0; color: #eef3f1; font-size: .93rem; }
+    .pilot-list li::before { content: "+"; color: #e5ba7c; font-weight: 700; }
+
+    .credibility { border-block: 1px solid var(--line); background: var(--cream); }
+    .credibility-grid { display: grid; gap: 1px; background: var(--line); }
+    .credibility-item { padding: 1.35rem 1rem; background: var(--cream); }
+    .credibility-item strong { display: block; margin-bottom: .15rem; color: var(--forest); font-size: .9rem; }
+    .credibility-item span { color: var(--muted); font-size: .82rem; }
+
+    section { padding: 5rem 0; }
+    .section-head { display: grid; gap: 1rem; margin-bottom: 2.7rem; }
+    .section-head .lead { margin-bottom: 0; }
+    .services { background: var(--white); }
+    .service-list { display: grid; border-top: 1px solid var(--line); }
+    .service {
+      display: grid;
+      grid-template-columns: 2.7rem 1fr;
+      gap: .8rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .service-number { color: var(--ochre); font-family: var(--serif); font-size: 1rem; }
+    .service p { max-width: 32rem; margin: 0; color: var(--copy); font-size: .94rem; }
+
+    .evidence { color: var(--white); background: var(--forest-deep); }
+    .evidence .eyebrow { color: #cdd9cf; }
+    .evidence .lead { color: #cbd6d2; }
+    .evidence-grid { display: grid; gap: 1rem; }
+    .evidence-card { padding: 1.5rem; border: 1px solid #355048; }
+    .evidence-card span { display: block; margin-bottom: 2.7rem; color: #dcb176; font-family: var(--serif); font-size: 1.2rem; }
+    .evidence-card h3 { font-size: 1.15rem; }
+    .evidence-card p { margin: 0; color: #b9c8c3; font-size: .92rem; }
+
+    .process { background: var(--cream); }
+    .process-grid { display: grid; gap: 1.5rem; }
+    .process-step { position: relative; padding: 1.5rem 0 0; border-top: 2px solid var(--forest); }
+    .process-step .step-label { color: var(--green); font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .process-step h3 { margin-top: 1.5rem; font-family: var(--serif); font-size: 1.65rem; font-weight: 600; }
+    .process-step p { margin-bottom: 0; color: var(--copy); font-size: .94rem; }
+    .pilot-callout { margin-top: 3rem; padding: 1.5rem; border-left: 3px solid var(--ochre); background: var(--white); }
+    .pilot-callout strong { display: block; margin-bottom: .35rem; }
+    .pilot-callout p { margin: 0; color: var(--copy); }
+
+    .founder { overflow: hidden; background: var(--white); }
+    .founder-grid { display: grid; align-items: center; gap: 2.5rem; }
+    .portrait { position: relative; margin: 0; }
+    .portrait::after { content: ""; position: absolute; z-index: -1; right: -1rem; bottom: -1rem; width: 72%; height: 72%; background: var(--sage-pale); }
+    .portrait img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; filter: saturate(.85) contrast(1.02); }
+    .portrait figcaption { margin-top: .8rem; color: var(--muted); font-size: .82rem; }
+    .founder-copy h2 { max-width: 12ch; }
+    .founder-copy .lead { font-size: 1.08rem; }
+    .founder-principle { margin: 1.5rem 0; padding: 1.2rem 0 1.2rem 1.2rem; border-left: 2px solid var(--ochre); color: var(--forest); font-family: var(--serif); font-size: 1.3rem; line-height: 1.35; }
+    .direct-links { display: flex; flex-wrap: wrap; gap: 1rem 1.4rem; margin-top: 1.5rem; }
+    .direct-links a { color: var(--green); font-size: .9rem; font-weight: 700; text-underline-offset: .25em; }
+
+    .contact-section { color: var(--white); background: var(--forest); }
+    .contact-grid { display: grid; gap: 3rem; }
+    .contact-copy .eyebrow { color: #d2ded4; }
+    .contact-copy h2 { max-width: 11ch; }
+    .contact-copy .lead { color: #d2ddda; }
+    .contact-details { display: grid; gap: .6rem; margin-top: 2rem; }
+    .contact-details a { width: fit-content; color: var(--white); font-weight: 600; text-underline-offset: .25em; overflow-wrap: anywhere; }
+    .contact-details small { color: #bbc9c5; }
+    .contact-form { padding: 1.5rem; color: var(--ink); background: var(--paper); }
+    .form-grid { display: grid; gap: 1rem; }
+    .field { display: grid; gap: .4rem; }
+    .field label { color: var(--forest); font-size: .8rem; font-weight: 700; }
+    .field input, .field textarea {
+      width: 100%;
+      padding: .8rem .85rem;
+      border: 1px solid #bfc8c1;
+      border-radius: 0;
+      color: var(--ink);
+      background: var(--white);
+    }
+    .field textarea { min-height: 8.5rem; resize: vertical; }
+    .field input:focus, .field textarea:focus { border-color: var(--green); }
+    .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1rem; }
+    .form-actions .button { cursor: pointer; }
+    .form-note { margin: 1rem 0 0; color: var(--muted); font-size: .78rem; line-height: 1.5; }
+    .form-status { min-height: 1.5em; margin: .7rem 0 0; color: var(--green); font-size: .82rem; font-weight: 600; }
+
+    footer { padding: 2.5rem 0; color: #d8e2df; background: var(--forest-deep); }
+    .footer-grid { display: grid; gap: 2rem; }
+    .footer-brand { margin-bottom: .3rem; color: var(--white); font-weight: 700; }
+    .footer-note { margin: 0; color: #9fb1ab; font-size: .86rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: .7rem 1.25rem; }
+    .footer-links a { color: #d8e2df; font-size: .84rem; text-underline-offset: .25em; }
+    .copyright { margin: 2rem 0 0; padding-top: 1.3rem; border-top: 1px solid #304841; color: #8fa39d; font-size: .78rem; }
+
+    @media (min-width: 38rem) {
+      .credibility-grid { grid-template-columns: repeat(3, 1fr); }
+      .evidence-grid { grid-template-columns: repeat(3, 1fr); }
+      .form-grid { grid-template-columns: repeat(2, 1fr); }
+      .field--wide { grid-column: 1 / -1; }
+      .contact-form { padding: 2rem; }
+    }
+    @media (min-width: 52rem) {
+      .nav-links { display: flex; }
+      .hero { padding: 7rem 0 5.5rem; }
+      .hero-grid { grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr); align-items: center; gap: 5rem; }
+      .pilot-card { padding: 2.2rem; }
+      section { padding: 7rem 0; }
+      .section-head { grid-template-columns: 1fr 1fr; align-items: end; gap: 4rem; }
+      .service-list { grid-template-columns: repeat(2, 1fr); }
+      .service:nth-child(odd) { padding-right: 2.5rem; border-right: 1px solid var(--line); }
+      .service:nth-child(even) { padding-left: 2.5rem; }
+      .process-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+      .founder-grid { grid-template-columns: minmax(18rem, .8fr) minmax(0, 1.2fr); gap: 6rem; }
+      .contact-grid { grid-template-columns: minmax(0, .8fr) minmax(26rem, 1.2fr); align-items: start; gap: 5rem; }
+      .footer-grid { grid-template-columns: 1fr auto; align-items: end; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Business AI Systems, home">
+        <span class="brand-mark" aria-hidden="true">BA</span>
+        <span>Business AI Systems</span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="button" href="https://businessaisystems.com/booking-8081">Book a discovery call</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid wrap">
+        <div>
+          <p class="eyebrow">Practical AI systems for growing businesses</p>
+          <h1>Make better work flow.</h1>
+          <p class="lead">We help UK SMEs remove operational friction, follow up opportunities and use business information more effectively. Clear systems, built around real work and commercial priorities.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://businessaisystems.com/booking-8081">Book a discovery call</a>
+            <a class="button button--text" href="#services">See where we can help</a>
+          </div>
+          <p class="hero-note">A straightforward first conversation. No pressure, no pre-set package and no technical pitch.</p>
+        </div>
+
+        <aside class="pilot-card" aria-labelledby="pilot-card-title">
+          <p class="eyebrow">The usual starting point</p>
+          <h2 id="pilot-card-title">One focused pilot.</h2>
+          <p>Most engagements begin with a contained business problem and a clear view of what useful progress should look like.</p>
+          <ul class="pilot-list">
+            <li>One workflow</li>
+            <li>One department</li>
+            <li>One business problem</li>
+            <li>One commercial objective</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <div class="credibility" aria-label="Business AI Systems principles">
+      <div class="credibility-grid wrap">
+        <div class="credibility-item"><strong>UK-based</strong><span>Working with UK SMEs</span></div>
+        <div class="credibility-item"><strong>Evidence-led</strong><span>Decisions tied to useful outcomes</span></div>
+        <div class="credibility-item"><strong>Practical by design</strong><span>Systems people can actually use</span></div>
+      </div>
+    </div>
+
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">What we improve</p>
+            <h2 id="services-title">Useful systems with a clear job to do.</h2>
+          </div>
+          <p class="lead">The right system should make work simpler, faster or more dependable. We focus on the areas where that improvement can matter commercially.</p>
+        </div>
+
+        <div class="service-list">
+          <article class="service"><span class="service-number">01</span><div><h3>Sales follow-up systems</h3><p>Keep prospects moving with timely follow-up, organised context and clear prompts for your team.</p></div></article>
+          <article class="service"><span class="service-number">02</span><div><h3>Business process automation</h3><p>Reduce repetitive admin, manual hand-offs and avoidable chasing across everyday operations.</p></div></article>
+          <article class="service"><span class="service-number">03</span><div><h3>Customer enquiry handling</h3><p>Respond to common questions faster and route important conversations to the right person.</p></div></article>
+          <article class="service"><span class="service-number">04</span><div><h3>CRM and workflow organisation</h3><p>Create a dependable flow of customer information, ownership and next actions.</p></div></article>
+          <article class="service"><span class="service-number">05</span><div><h3>AI-assisted research and reporting</h3><p>Turn large amounts of information into useful summaries, reports and working insights.</p></div></article>
+          <article class="service"><span class="service-number">06</span><div><h3>Market and competitor intelligence</h3><p>Track relevant changes and surface evidence that supports better commercial decisions.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence" aria-labelledby="evidence-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">What good looks like</p>
+            <h2 id="evidence-title">Built to improve the work, not showcase the technology.</h2>
+          </div>
+          <p class="lead">Before building anything, we agree the practical signs of progress. That keeps the work grounded and gives the pilot a fair test.</p>
+        </div>
+        <div class="evidence-grid">
+          <article class="evidence-card"><span>01</span><h3>A clear baseline</h3><p>Understand the current workflow, bottleneck and cost of doing nothing before proposing a system.</p></article>
+          <article class="evidence-card"><span>02</span><h3>A useful measure</h3><p>Define success in business terms, such as response time, consistency, capacity or visibility.</p></article>
+          <article class="evidence-card"><span>03</span><h3>A sensible decision</h3><p>Use evidence from the pilot to refine, expand, pause or take a different route.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="approach" aria-labelledby="approach-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">How we work</p>
+            <h2 id="approach-title">Start focused. Learn quickly. Build with confidence.</h2>
+          </div>
+          <p class="lead">A good first project is narrow enough to manage, important enough to matter and clear enough to evaluate.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step"><span class="step-label">Step one</span><h3>Find the opportunity</h3><p>We look at the commercial goal, the work involved, the people affected and the tools already in place.</p></article>
+          <article class="process-step"><span class="step-label">Step two</span><h3>Shape the pilot</h3><p>We define a contained solution, agree sensible measures and build around how the team actually works.</p></article>
+          <article class="process-step"><span class="step-label">Step three</span><h3>Review the evidence</h3><p>We assess what changed, refine what is useful and only expand when the commercial case supports it.</p></article>
+        </div>
+        <div class="pilot-callout">
+          <strong>You do not need an AI strategy to begin.</strong>
+          <p>You need a worthwhile business problem, a realistic scope and a clear reason to improve it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="founder" id="about" aria-labelledby="about-title">
+      <div class="founder-grid wrap">
+        <figure class="portrait">
+          <img src="neville-whitnall-founder.jpg" width="900" height="900" alt="Neville Whitnall, founder of Business AI Systems" loading="lazy" decoding="async">
+          <figcaption>Neville Whitnall, Founder of Business AI Systems</figcaption>
+        </figure>
+        <div class="founder-copy">
+          <p class="eyebrow">A direct, founder-led service</p>
+          <h2 id="about-title">Practical thinking, commercially grounded.</h2>
+          <p class="lead">Business AI Systems is led by Neville Whitnall. He works directly with business owners and teams to understand where work gets stuck, what improvement is worth pursuing and how a practical system can help.</p>
+          <p class="founder-principle">“The aim is not to add more technology. It is to make an important part of the business work better.”</p>
+          <p>Every recommendation starts with the business context. The result should be useful to the people doing the work, understandable to the people making the investment and proportionate to the opportunity.</p>
+          <div class="direct-links">
+            <a href="mailto:neville@businessaisystems.com">Email Neville</a>
+            <a href="tel:+447473531524">Call 07473 531524</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-grid wrap">
+        <div class="contact-copy">
+          <p class="eyebrow">Start a useful conversation</p>
+          <h2 id="contact-title">What workflow would you like to improve?</h2>
+          <p class="lead">Tell us where work is slow, inconsistent or hard to manage. Neville will reply directly to explore whether a focused pilot makes sense.</p>
+          <div class="contact-details">
+            <a href="mailto:neville@businessaisystems.com">neville@businessaisystems.com</a>
+            <a href="tel:+447473531524">07473 531524</a>
+            <small>UK-based, working with UK SMEs</small>
+          </div>
+          <div class="hero-actions">
+            <a class="button button--light" href="https://businessaisystems.com/booking-8081">Book a discovery call</a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="enquiry-form" action="mailto:neville@businessaisystems.com" method="post" enctype="text/plain">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field field--wide">
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" autocomplete="organization" required>
+            </div>
+            <div class="field field--wide">
+              <label for="workflow">What workflow would you like help with?</label>
+              <textarea id="workflow" name="workflow" required placeholder="For example: following up new enquiries consistently across the sales team"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="button" type="submit">Prepare email enquiry</button>
+          </div>
+          <p class="form-note">Submitting opens an email in your usual email app, ready for you to review and send. If that does not work, email neville@businessaisystems.com directly.</p>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">Business AI Systems</p>
+          <p class="footer-note">Practical AI systems for growing businesses.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#services">Services</a>
+          <a href="#approach">Approach</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+        </nav>
+      </div>
+      <p class="copyright">&copy; 2026 Business AI Systems. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var form = document.getElementById("enquiry-form");
+      var status = document.getElementById("form-status");
+
+      if (!form || !status) return;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!form.reportValidity()) return;
+
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var company = document.getElementById("company").value.trim();
+        var workflow = document.getElementById("workflow").value.trim();
+        var subject = "Business AI Systems enquiry from " + company;
+        var body = [
+          "Hello Neville,",
+          "",
+          "I would like to discuss the following workflow:",
+          "",
+          workflow,
+          "",
+          "Name: " + name,
+          "Email: " + email,
+          "Company: " + company
+        ].join("\n");
+
+        status.textContent = "Your email app should open now. Please review the message and press send.";
+        window.location.href = "mailto:neville@businessaisystems.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      });
+    }());
+  </script>
+</body>
+</html>
