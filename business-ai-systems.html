@@ -95,6 +95,9 @@
       --header-bg: rgba(247, 251, 255, .96);
       --grid-line: rgba(49, 199, 243, .11);
       --glow: rgba(8, 127, 245, .22);
+      --blue-surface: rgba(8, 127, 245, .08);
+      --cyan-surface: rgba(49, 199, 243, .09);
+      --white-faint: rgba(255, 255, 255, .16);
       --white-line: rgba(255, 255, 255, .2);
       --shadow: 0 24px 70px rgba(6, 17, 31, .18);
       --max: 76rem;
@@ -322,22 +325,34 @@
     .button--text { min-width: 44px; box-shadow: none; }
     .nav { min-height: 4.75rem; }
     .brand { min-height: 44px; min-width: 44px; }
-    .brand-mark { display: grid; flex: 0 0 auto; width: 2.75rem; height: 2.75rem; place-items: center; border-radius: 50%; background: var(--forest-deep); overflow: hidden; }
+    .brand-mark { display: grid; flex: 0 0 auto; width: 3rem; height: 3rem; padding: .18rem; place-items: center; border: 1px solid var(--line); border-radius: .15rem; background: var(--white); overflow: hidden; }
     .brand-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
     .brand-name { color: var(--ink); font-size: .95rem; }
     .hero { color: var(--white); background-color: var(--forest-deep); background-image: linear-gradient(var(--grid-line) 1px, var(--transparent) 1px), linear-gradient(90deg, var(--grid-line) 1px, var(--transparent) 1px); background-size: 2rem 2rem; }
-    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 75% 45%, var(--glow), var(--transparent) 35%); pointer-events: none; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, var(--transparent) 55%, var(--blue-surface)); pointer-events: none; }
     .hero::after { right: -10rem; bottom: -13rem; border-color: var(--sage); border-radius: 0; transform: rotate(45deg); opacity: .25; }
     .hero .eyebrow { color: var(--sage); }
     .hero .lead { color: var(--text-on-dark); }
     .hero-note { color: var(--text-on-dark-muted); }
     .hero .button--text { color: var(--white); }
-    .system-panel { position: relative; align-self: stretch; display: grid; align-content: end; min-height: 27rem; padding: 1rem; border: 1px solid var(--line-dark); background: var(--navy-soft); box-shadow: var(--shadow); }
+    .system-panel { position: relative; align-self: stretch; display: grid; grid-template-rows: auto 1fr auto; min-height: 27rem; padding: 1rem; border: 1px solid var(--line-dark); background: var(--navy-soft); box-shadow: var(--shadow); }
     .hero-visual { display: grid; gap: 1rem; }
     .system-panel::before, .system-panel::after { content: ""; position: absolute; width: 4.5rem; height: 4.5rem; border-color: var(--sage); opacity: .75; }
     .system-panel::before { top: -.4rem; left: -.4rem; border-top: 2px solid var(--sage); border-left: 2px solid var(--sage); }
     .system-panel::after { right: -.4rem; bottom: -.4rem; border-right: 2px solid var(--sage); border-bottom: 2px solid var(--sage); }
-    .hero-logo { position: absolute; top: 50%; left: 50%; width: min(72%, 18rem); height: auto; aspect-ratio: 1; border-radius: 50%; object-fit: contain; transform: translate(-50%, -58%); filter: drop-shadow(0 0 1.8rem var(--glow)); }
+    .system-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .2rem .15rem .85rem; border-bottom: 1px solid var(--line-dark); color: var(--text-on-dark-muted); font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+    .system-heading span:last-child { color: var(--sage); }
+    .system-map { position: relative; display: grid; grid-template-columns: 1fr 1.15fr 1fr; align-items: center; gap: 1.15rem; padding: 2.4rem .25rem; }
+    .system-map::before { content: ""; position: absolute; top: 50%; left: 12%; right: 12%; height: 1px; background: var(--sage); opacity: .55; }
+    .system-node { position: relative; z-index: 1; min-width: 0; padding: .85rem .55rem; border: 1px solid var(--line-dark); color: var(--text-on-dark-muted); background: var(--deep-navy); font-size: .61rem; font-weight: 700; letter-spacing: .11em; line-height: 1.4; text-align: center; text-transform: uppercase; }
+    .system-node::before { content: ""; position: absolute; top: 50%; left: -.32rem; width: .58rem; height: .58rem; border: 1px solid var(--sage); background: var(--navy-soft); transform: translateY(-50%) rotate(45deg); }
+    .system-node--core { padding-block: 1.25rem; border-color: var(--brand-blue); color: var(--white); background: var(--blue-deep); box-shadow: .55rem .55rem 0 var(--cyan-surface); }
+    .system-node--core::after { content: ""; position: absolute; inset: .35rem; border: 1px solid var(--white-faint); }
+    .system-node--end::before { left: auto; right: -.32rem; }
+    .system-trace { position: absolute; top: 23%; bottom: 23%; left: 50%; width: 1px; background: var(--line-dark); }
+    .system-trace::before, .system-trace::after { content: ""; position: absolute; left: 50%; width: .42rem; height: .42rem; background: var(--sage); transform: translateX(-50%); }
+    .system-trace::before { top: 0; }
+    .system-trace::after { bottom: 0; }
     .system-status { position: relative; z-index: 1; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .65rem; padding: .75rem; border-top: 1px solid var(--line-dark); color: var(--text-on-dark-muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
     .status-dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--sage); box-shadow: 0 0 .8rem var(--sage); }
     .pilot-card { border: 1px solid var(--line-dark); background: var(--navy-soft); }
@@ -349,7 +364,7 @@
     .founder-principle { color: var(--ink); font-family: var(--sans); font-weight: 600; }
     .contact-section { background-color: var(--forest-deep); background-image: linear-gradient(90deg, var(--grid-line) 1px, var(--transparent) 1px); background-size: 2rem 2rem; }
     .brand-area { display: flex; align-items: center; gap: 1rem; }
-    .footer-logo { display: block; flex: 0 0 auto; width: 3.5rem; height: 3.5rem; border-radius: 50%; object-fit: contain; background: var(--forest-deep); }
+    .footer-logo { display: block; flex: 0 0 auto; width: 3.5rem; height: 3.5rem; padding: .2rem; border: 1px solid var(--line-dark); border-radius: .15rem; object-fit: contain; background: var(--white); }
     .footer-brand { margin: 0; }
     .nav-links a { min-height: 44px; display: inline-flex; align-items: center; }
     .direct-links a, .footer-links a, .contact-details a { min-height: 44px; display: inline-flex; align-items: center; }
@@ -384,6 +399,10 @@
       .nav-links > a:not(.button) { justify-content: center; min-width: 0; padding-inline: .25rem; }
       .nav-links .button { display: none; }
       .brand-mark { width: 2.75rem; }
+    }
+    @media (max-width: 25rem) {
+      .system-map { gap: .55rem; padding-inline: 0; }
+      .system-node { padding-inline: .25rem; font-size: .55rem; letter-spacing: .07em; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -425,8 +444,14 @@
         </div>
 
         <div class="hero-visual">
-          <div class="system-panel" aria-label="Business AI Systems identity">
-            <img class="hero-logo" src="bais-logo-clean.png" width="945" height="945" alt="Business AI Systems logo">
+          <div class="system-panel" aria-hidden="true">
+            <div class="system-heading"><span>System map / 01</span><span>Active</span></div>
+            <div class="system-map">
+              <span class="system-trace"></span>
+              <span class="system-node">Signal</span>
+              <span class="system-node system-node--core">Workflow</span>
+              <span class="system-node system-node--end">Outcome</span>
+            </div>
             <div class="system-status"><span class="status-dot" aria-hidden="true"></span><span>Practical systems</span><span>UK / 01</span></div>
           </div>
           <aside class="pilot-card" aria-labelledby="pilot-card-title">
