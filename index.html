@@ -219,20 +219,28 @@
       border-radius: 50%;
       opacity: .45;
     }
-    .hero-grid { position: relative; z-index: 1; display: grid; gap: 3rem; }
+    .hero-grid { position: relative; z-index: 1; display: grid; gap: 2.5rem; }
     .hero .lead { max-width: 37rem; }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 2rem; }
     .hero-note { margin: 1.25rem 0 0; color: var(--muted); font-size: .86rem; }
     .availability { display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 1.5rem; padding: .38rem .65rem; border: 1px solid var(--line-dark); border-radius: 999px; color: var(--text-on-dark); background: var(--navy-soft); font-size: .75rem; font-weight: 650; letter-spacing: .02em; }
     .availability::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--cyan); }
-    .pilot-card { position: relative; align-self: end; padding: 1.6rem; color: var(--white); background: var(--forest); box-shadow: var(--shadow); }
-    .pilot-card::before { content: "01"; position: absolute; top: 1rem; right: 1.2rem; color: var(--sage); font-family: var(--serif); font-size: 1.4rem; }
+    .pilot-card { position: relative; align-self: center; padding: 1.6rem; color: var(--white); background: var(--forest); box-shadow: var(--shadow); }
     .pilot-card .eyebrow { color: var(--cyan-pale); }
-    .pilot-card h2 { max-width: 10ch; font-size: clamp(2rem, 5vw, 3rem); }
+    .pilot-card h2 { max-width: 13ch; margin-bottom: .8rem; font-size: clamp(1.75rem, 4vw, 2.55rem); }
     .pilot-card p { color: var(--text-on-dark); }
-    .pilot-list { margin: 1.5rem 0 0; padding: 1rem 0 0; border-top: 1px solid var(--white-line); list-style: none; }
-    .pilot-list li { display: flex; gap: .7rem; padding: .32rem 0; color: var(--paper); font-size: .93rem; }
-    .pilot-list li::before { content: "+"; color: var(--sage); font-weight: 700; }
+    .pilot-list { display: grid; gap: .65rem; margin: 1.4rem 0 0; padding: 1.15rem 0 0; border-top: 1px solid var(--white-line); list-style: none; }
+    .pilot-list li { display: grid; grid-template-columns: 1.6rem 1fr; gap: .7rem; align-items: start; color: var(--paper); font-size: .9rem; }
+    .pilot-list li::before { content: "\2713"; display: grid; width: 1.35rem; height: 1.35rem; place-items: center; border: 1px solid rgba(49, 199, 243, .45); color: var(--sage); font-size: .72rem; font-weight: 800; }
+    .pilot-list strong { display: block; margin-bottom: .05rem; color: var(--white); font-size: .92rem; }
+    .pilot-list span { color: var(--text-on-dark-muted); font-size: .81rem; }
+    .pilot-route { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: .45rem; margin-top: 1.35rem; padding-top: 1rem; border-top: 1px solid var(--white-line); color: var(--text-on-dark-muted); font-size: .62rem; font-weight: 700; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+    .pilot-route i { width: .8rem; height: 1px; background: var(--sage); opacity: .65; }
+    .outcome-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 38rem; margin-top: 2rem; border-block: 1px solid var(--line-dark); }
+    .outcome-strip div { padding: .8rem .9rem .8rem 0; }
+    .outcome-strip div + div { padding-left: .9rem; border-left: 1px solid var(--line-dark); }
+    .outcome-strip strong { display: block; color: var(--white); font-size: .79rem; line-height: 1.3; }
+    .outcome-strip span { display: block; margin-top: .2rem; color: var(--text-on-dark-muted); font-size: .7rem; line-height: 1.35; }
 
     .credibility { border-block: 1px solid var(--line); background: var(--cream); }
     .credibility-grid { display: grid; gap: 1px; background: var(--line); }
@@ -343,27 +351,8 @@
     .hero .lead { color: var(--text-on-dark); }
     .hero-note { color: var(--text-on-dark-muted); }
     .hero .button--text { color: var(--white); }
-    .system-panel { position: relative; align-self: stretch; display: grid; grid-template-rows: auto 1fr auto; min-height: 27rem; padding: 1rem; border: 1px solid var(--line-dark); border-radius: var(--radius-sm); background: var(--navy-soft); box-shadow: var(--shadow); }
-    .hero-visual { display: grid; gap: 1rem; }
-    .system-panel::before, .system-panel::after { content: ""; position: absolute; width: 4.5rem; height: 4.5rem; border-color: var(--sage); opacity: .75; }
-    .system-panel::before { top: -.4rem; left: -.4rem; border-top: 2px solid var(--sage); border-left: 2px solid var(--sage); }
-    .system-panel::after { right: -.4rem; bottom: -.4rem; border-right: 2px solid var(--sage); border-bottom: 2px solid var(--sage); }
-    .system-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .2rem .15rem .85rem; border-bottom: 1px solid var(--line-dark); color: var(--text-on-dark-muted); font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-    .system-heading span:last-child { color: var(--sage); }
-    .system-map { position: relative; display: grid; grid-template-columns: 1fr 1.15fr 1fr; align-items: center; gap: 1.15rem; padding: 2.4rem .25rem; }
-    .system-map::before { content: ""; position: absolute; top: 50%; left: 12%; right: 12%; height: 1px; background: var(--sage); opacity: .55; }
-    .system-node { position: relative; z-index: 1; min-width: 0; padding: .85rem .55rem; border: 1px solid var(--line-dark); color: var(--text-on-dark-muted); background: var(--deep-navy); font-size: .61rem; font-weight: 700; letter-spacing: .11em; line-height: 1.4; text-align: center; text-transform: uppercase; }
-    .system-node::before { content: ""; position: absolute; top: 50%; left: -.32rem; width: .58rem; height: .58rem; border: 1px solid var(--sage); background: var(--navy-soft); transform: translateY(-50%) rotate(45deg); }
-    .system-node--core { padding-block: 1.25rem; border-color: var(--brand-blue); color: var(--white); background: var(--blue-deep); box-shadow: .55rem .55rem 0 var(--cyan-surface); }
-    .system-node--core::after { content: ""; position: absolute; inset: .35rem; border: 1px solid var(--white-faint); }
-    .system-node--end::before { left: auto; right: -.32rem; }
-    .system-trace { position: absolute; top: 23%; bottom: 23%; left: 50%; width: 1px; background: var(--line-dark); }
-    .system-trace::before, .system-trace::after { content: ""; position: absolute; left: 50%; width: .42rem; height: .42rem; background: var(--sage); transform: translateX(-50%); }
-    .system-trace::before { top: 0; }
-    .system-trace::after { bottom: 0; }
-    .system-status { position: relative; z-index: 1; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .65rem; padding: .75rem; border-top: 1px solid var(--line-dark); color: var(--text-on-dark-muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
-    .status-dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--sage); box-shadow: 0 0 .8rem var(--sage); }
-    .pilot-card { border: 1px solid var(--line-dark); border-radius: var(--radius-sm); background: var(--navy-soft); }
+    .hero-visual { align-self: center; }
+    .pilot-card { border: 1px solid #285276; border-top: 3px solid var(--sage); border-radius: var(--radius-sm); background: linear-gradient(145deg, var(--navy-soft), #081a2c); }
     .credibility { background: var(--paper); }
     .credibility-item { background: var(--paper); }
     .service-number { font-family: var(--sans); font-weight: 700; }
@@ -387,8 +376,8 @@
     @media (min-width: 52rem) {
       .credibility-grid { grid-template-columns: repeat(4, 1fr); }
       .nav-links { display: flex; }
-      .hero { padding: 7rem 0 5.5rem; }
-      .hero-grid { grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr); align-items: center; gap: 5rem; }
+      .hero { padding: 5.75rem 0 4.75rem; }
+      .hero-grid { grid-template-columns: minmax(0, 1.25fr) minmax(20rem, .75fr); align-items: center; gap: clamp(3rem, 6vw, 5.5rem); }
       .pilot-card { padding: 2.2rem; }
       section { padding: 7rem 0; }
       .section-head { grid-template-columns: 1fr 1fr; align-items: end; gap: 4rem; }
@@ -401,7 +390,6 @@
       .footer-grid { grid-template-columns: 1fr auto; align-items: end; }
     }
     @media (max-width: 51.99rem) {
-      .system-panel { min-height: 23rem; }
       header { background: var(--header-bg); }
       .nav { flex-wrap: wrap; padding-block: .65rem; }
       .nav-links { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); width: 100%; gap: .25rem; }
@@ -414,15 +402,17 @@
       .nav-links { grid-template-columns: repeat(3, 1fr); }
       .nav-links a:nth-child(3) { display: none; }
       h1 { font-size: clamp(2.75rem, 15vw, 4.35rem); }
-      .hero { padding-top: 3.5rem; }
+      .hero { padding: 3.2rem 0 3rem; }
       .hero-actions { align-items: stretch; }
       .hero-actions .button:not(.button--text) { width: 100%; }
-      .system-panel { min-height: 20rem; }
+      .outcome-strip { grid-template-columns: 1fr; }
+      .outcome-strip div { padding: .7rem 0; }
+      .outcome-strip div + div { padding-left: 0; border-top: 1px solid var(--line-dark); border-left: 0; }
+      .pilot-card { padding: 1.35rem; }
       .credibility-item { min-width: 0; }
     }
     @media (max-width: 25rem) {
-      .system-map { gap: .55rem; padding-inline: 0; }
-      .system-node { padding-inline: .25rem; font-size: .55rem; letter-spacing: .07em; }
+      .pilot-route { gap: .25rem; font-size: .56rem; letter-spacing: .04em; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -457,6 +447,11 @@
           <p class="eyebrow">Practical AI systems for growing businesses</p>
           <h1>Turn operational friction into reliable flow.</h1>
           <p class="lead">We design practical AI systems that help UK SMEs follow up opportunities, reduce repetitive work and use business information with more confidence.</p>
+          <div class="outcome-strip" aria-label="Typical business outcomes">
+            <div><strong>Faster follow-up</strong><span>Keep valuable opportunities moving</span></div>
+            <div><strong>Less manual admin</strong><span>Give your team useful time back</span></div>
+            <div><strong>Clearer information</strong><span>Make decisions with confidence</span></div>
+          </div>
           <div class="hero-actions">
             <a class="button" href="https://businessaisystems.com/booking-8081">Book a discovery call</a>
             <a class="button button--text" href="#services">See where we can help</a>
@@ -465,26 +460,16 @@
         </div>
 
         <div class="hero-visual">
-          <div class="system-panel" aria-hidden="true">
-            <div class="system-heading"><span>Working system / 01</span><span>Outcome-led</span></div>
-            <div class="system-map">
-              <span class="system-trace"></span>
-              <span class="system-node">Signal</span>
-              <span class="system-node system-node--core">Workflow</span>
-              <span class="system-node system-node--end">Outcome</span>
-            </div>
-            <div class="system-status"><span class="status-dot" aria-hidden="true"></span><span>Designed around real work</span><span>BAIS / UK</span></div>
-          </div>
           <aside class="pilot-card" aria-labelledby="pilot-card-title">
-            <p class="eyebrow">The usual starting point</p>
-            <h2 id="pilot-card-title">One focused pilot.</h2>
-            <p>Most engagements begin with a contained business problem and a clear view of what useful progress should look like.</p>
+            <p class="eyebrow">A sensible first project</p>
+            <h2 id="pilot-card-title">Start with one focused pilot.</h2>
+            <p>Choose a valuable workflow, agree what better looks like and test a practical system without committing to a large transformation.</p>
             <ul class="pilot-list">
-              <li>One workflow</li>
-              <li>One department</li>
-              <li>One business problem</li>
-              <li>One commercial objective</li>
+              <li><div><strong>Focused scope</strong><span>One workflow and the people who use it</span></div></li>
+              <li><div><strong>Commercial measure</strong><span>Time, consistency, capacity or visibility</span></div></li>
+              <li><div><strong>Evidence to decide</strong><span>Refine, expand or stop based on results</span></div></li>
             </ul>
+            <div class="pilot-route" aria-label="Pilot process"><span>Diagnose</span><i aria-hidden="true"></i><span>Build</span><i aria-hidden="true"></i><span>Review</span></div>
           </aside>
         </div>
       </div>
