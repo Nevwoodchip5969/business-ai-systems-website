@@ -100,6 +100,9 @@
       --white-faint: rgba(255, 255, 255, .16);
       --white-line: rgba(255, 255, 255, .2);
       --shadow: 0 24px 70px rgba(6, 17, 31, .18);
+      --shadow-soft: 0 12px 34px rgba(6, 17, 31, .1);
+      --radius-sm: .35rem;
+      --radius-md: .7rem;
       --max: 76rem;
 
       /* Compatibility aliases retained for the established component rules. */
@@ -177,7 +180,7 @@
       min-height: 3.2rem;
       padding: .78rem 1.2rem;
       border: 1px solid var(--forest);
-      border-radius: 0;
+      border-radius: var(--radius-sm);
       color: var(--white);
       background: var(--forest);
       font-size: .9rem;
@@ -185,16 +188,18 @@
       line-height: 1.25;
       text-align: center;
       text-decoration: none;
-      transition: color .2s ease, background .2s ease, transform .2s ease;
+      box-shadow: 0 8px 20px rgba(8, 127, 245, .18);
+      transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
     }
     .button::after { content: "→"; margin-left: .65rem; font-size: 1.1rem; }
-    .button:hover { color: var(--forest); background: var(--transparent); transform: translateY(-2px); }
+    .button:hover { border-color: var(--cyan); color: var(--white); background: var(--blue-deep); box-shadow: 0 12px 26px rgba(8, 127, 245, .24); transform: translateY(-2px); }
     .button--light { border-color: var(--white); color: var(--forest); background: var(--white); }
     .button--light:hover { color: var(--white); background: var(--transparent); }
     .button--text { padding-inline: 0; border: 0; color: var(--forest); background: var(--transparent); }
-    .button--text:hover { color: var(--green); }
+    .button--text { box-shadow: none; }
+    .button--text:hover { color: var(--cyan); background: var(--transparent); box-shadow: none; }
 
-    header { position: relative; z-index: 10; border-bottom: 1px solid var(--line); background: var(--header-bg); }
+    header { position: sticky; z-index: 10; top: 0; border-bottom: 1px solid var(--line); background: var(--header-bg); backdrop-filter: blur(14px); }
     .nav { display: flex; align-items: center; justify-content: space-between; min-height: 5rem; gap: 1rem; }
     .brand { display: flex; align-items: center; gap: .75rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.1; text-decoration: none; }
     .brand-mark { display: grid; width: 2.25rem; height: 2.25rem; place-items: center; color: var(--cream); background: var(--forest); font-family: var(--serif); font-size: .9rem; }
@@ -202,7 +207,7 @@
     .nav-links > a:not(.button) { color: var(--copy); font-size: .88rem; font-weight: 600; text-decoration: none; }
     .nav-links > a:not(.button):hover { color: var(--green); }
 
-    .hero { position: relative; overflow: hidden; padding: 4.5rem 0 3rem; }
+    .hero { position: relative; overflow: hidden; padding: 4.5rem 0 3.5rem; }
     .hero::after {
       content: "";
       position: absolute;
@@ -218,6 +223,8 @@
     .hero .lead { max-width: 37rem; }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-top: 2rem; }
     .hero-note { margin: 1.25rem 0 0; color: var(--muted); font-size: .86rem; }
+    .availability { display: inline-flex; align-items: center; gap: .55rem; margin-bottom: 1.5rem; padding: .38rem .65rem; border: 1px solid var(--line-dark); border-radius: 999px; color: var(--text-on-dark); background: var(--navy-soft); font-size: .75rem; font-weight: 650; letter-spacing: .02em; }
+    .availability::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--cyan); }
     .pilot-card { position: relative; align-self: end; padding: 1.6rem; color: var(--white); background: var(--forest); box-shadow: var(--shadow); }
     .pilot-card::before { content: "01"; position: absolute; top: 1rem; right: 1.2rem; color: var(--sage); font-family: var(--serif); font-size: 1.4rem; }
     .pilot-card .eyebrow { color: var(--cyan-pale); }
@@ -244,7 +251,9 @@
       gap: .8rem;
       padding: 1.4rem 0;
       border-bottom: 1px solid var(--line);
+      transition: background .2s ease;
     }
+    .service:hover { background: var(--page-white); }
     .service-number { color: var(--ochre); font-family: var(--serif); font-size: 1rem; }
     .service p { max-width: 32rem; margin: 0; color: var(--copy); font-size: .94rem; }
 
@@ -252,7 +261,7 @@
     .evidence .eyebrow { color: var(--cyan-pale); }
     .evidence .lead { color: var(--text-on-dark); }
     .evidence-grid { display: grid; gap: 1rem; }
-    .evidence-card { padding: 1.5rem; border: 1px solid var(--line-dark); }
+    .evidence-card { padding: 1.5rem; border: 1px solid var(--line-dark); border-radius: var(--radius-sm); }
     .evidence-card span { display: block; margin-bottom: 2.7rem; color: var(--sage); font-family: var(--serif); font-size: 1.2rem; }
     .evidence-card h3 { font-size: 1.15rem; }
     .evidence-card p { margin: 0; color: var(--text-on-dark-muted); font-size: .92rem; }
@@ -287,7 +296,7 @@
     .contact-details { display: grid; gap: .6rem; margin-top: 2rem; }
     .contact-details a { width: fit-content; color: var(--white); font-weight: 600; text-underline-offset: .25em; overflow-wrap: anywhere; }
     .contact-details small { color: var(--text-on-dark-muted); }
-    .contact-form { padding: 1.5rem; color: var(--ink); background: var(--paper); }
+    .contact-form { padding: 1.5rem; border-top: 3px solid var(--cyan); border-radius: var(--radius-md); color: var(--ink); background: var(--paper); box-shadow: var(--shadow); }
     .form-grid { display: grid; gap: 1rem; }
     .field { display: grid; gap: .4rem; }
     .field label { color: var(--forest); font-size: .8rem; font-weight: 700; }
@@ -295,7 +304,7 @@
       width: 100%;
       padding: .8rem .85rem;
       border: 1px solid var(--silver);
-      border-radius: 0;
+      border-radius: var(--radius-sm);
       color: var(--ink);
       background: var(--white);
     }
@@ -320,8 +329,7 @@
     h1, h2 { font-family: var(--sans); font-weight: 700; }
     h1 { max-width: 11ch; letter-spacing: -.055em; }
     h2 { letter-spacing: -.045em; }
-    .button { min-height: 44px; border-radius: .2rem; box-shadow: 0 0 0 0 var(--glow); }
-    .button:hover { box-shadow: 0 0 1.8rem var(--glow); }
+    .button { min-height: 44px; }
     .button--text { min-width: 44px; box-shadow: none; }
     .nav { min-height: 4.75rem; }
     .brand { min-height: 44px; min-width: 44px; }
@@ -335,7 +343,7 @@
     .hero .lead { color: var(--text-on-dark); }
     .hero-note { color: var(--text-on-dark-muted); }
     .hero .button--text { color: var(--white); }
-    .system-panel { position: relative; align-self: stretch; display: grid; grid-template-rows: auto 1fr auto; min-height: 27rem; padding: 1rem; border: 1px solid var(--line-dark); background: var(--navy-soft); box-shadow: var(--shadow); }
+    .system-panel { position: relative; align-self: stretch; display: grid; grid-template-rows: auto 1fr auto; min-height: 27rem; padding: 1rem; border: 1px solid var(--line-dark); border-radius: var(--radius-sm); background: var(--navy-soft); box-shadow: var(--shadow); }
     .hero-visual { display: grid; gap: 1rem; }
     .system-panel::before, .system-panel::after { content: ""; position: absolute; width: 4.5rem; height: 4.5rem; border-color: var(--sage); opacity: .75; }
     .system-panel::before { top: -.4rem; left: -.4rem; border-top: 2px solid var(--sage); border-left: 2px solid var(--sage); }
@@ -355,7 +363,7 @@
     .system-trace::after { bottom: 0; }
     .system-status { position: relative; z-index: 1; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .65rem; padding: .75rem; border-top: 1px solid var(--line-dark); color: var(--text-on-dark-muted); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
     .status-dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--sage); box-shadow: 0 0 .8rem var(--sage); }
-    .pilot-card { border: 1px solid var(--line-dark); background: var(--navy-soft); }
+    .pilot-card { border: 1px solid var(--line-dark); border-radius: var(--radius-sm); background: var(--navy-soft); }
     .credibility { background: var(--paper); }
     .credibility-item { background: var(--paper); }
     .service-number { font-family: var(--sans); font-weight: 700; }
@@ -370,13 +378,14 @@
     .direct-links a, .footer-links a, .contact-details a { min-height: 44px; display: inline-flex; align-items: center; }
 
     @media (min-width: 38rem) {
-      .credibility-grid { grid-template-columns: repeat(3, 1fr); }
+      .credibility-grid { grid-template-columns: repeat(2, 1fr); }
       .evidence-grid { grid-template-columns: repeat(3, 1fr); }
       .form-grid { grid-template-columns: repeat(2, 1fr); }
       .field--wide { grid-column: 1 / -1; }
       .contact-form { padding: 2rem; }
     }
     @media (min-width: 52rem) {
+      .credibility-grid { grid-template-columns: repeat(4, 1fr); }
       .nav-links { display: flex; }
       .hero { padding: 7rem 0 5.5rem; }
       .hero-grid { grid-template-columns: minmax(0, 1.35fr) minmax(18rem, .65fr); align-items: center; gap: 5rem; }
@@ -399,6 +408,17 @@
       .nav-links > a:not(.button) { justify-content: center; min-width: 0; padding-inline: .25rem; }
       .nav-links .button { display: none; }
       .brand-mark { width: 2.75rem; }
+      .brand-name { font-size: .88rem; }
+    }
+    @media (max-width: 37.99rem) {
+      .nav-links { grid-template-columns: repeat(3, 1fr); }
+      .nav-links a:nth-child(3) { display: none; }
+      h1 { font-size: clamp(2.75rem, 15vw, 4.35rem); }
+      .hero { padding-top: 3.5rem; }
+      .hero-actions { align-items: stretch; }
+      .hero-actions .button:not(.button--text) { width: 100%; }
+      .system-panel { min-height: 20rem; }
+      .credibility-item { min-width: 0; }
     }
     @media (max-width: 25rem) {
       .system-map { gap: .55rem; padding-inline: 0; }
@@ -433,26 +453,27 @@
     <section class="hero" id="top">
       <div class="hero-grid wrap">
         <div>
+          <span class="availability">Founder-led consultancy for UK SMEs</span>
           <p class="eyebrow">Practical AI systems for growing businesses</p>
-          <h1>Make better work flow.</h1>
-          <p class="lead">We help UK SMEs remove operational friction, follow up opportunities and use business information more effectively. Clear systems, built around real work and commercial priorities.</p>
+          <h1>Turn operational friction into reliable flow.</h1>
+          <p class="lead">We design practical AI systems that help UK SMEs follow up opportunities, reduce repetitive work and use business information with more confidence.</p>
           <div class="hero-actions">
             <a class="button" href="https://businessaisystems.com/booking-8081">Book a discovery call</a>
             <a class="button button--text" href="#services">See where we can help</a>
           </div>
-          <p class="hero-note">A straightforward first conversation. No pressure, no pre-set package and no technical pitch.</p>
+          <p class="hero-note">A direct first conversation with the founder. No pre-set package and no technical pitch.</p>
         </div>
 
         <div class="hero-visual">
           <div class="system-panel" aria-hidden="true">
-            <div class="system-heading"><span>System map / 01</span><span>Active</span></div>
+            <div class="system-heading"><span>Working system / 01</span><span>Outcome-led</span></div>
             <div class="system-map">
               <span class="system-trace"></span>
               <span class="system-node">Signal</span>
               <span class="system-node system-node--core">Workflow</span>
               <span class="system-node system-node--end">Outcome</span>
             </div>
-            <div class="system-status"><span class="status-dot" aria-hidden="true"></span><span>Practical systems</span><span>UK / 01</span></div>
+            <div class="system-status"><span class="status-dot" aria-hidden="true"></span><span>Designed around real work</span><span>BAIS / UK</span></div>
           </div>
           <aside class="pilot-card" aria-labelledby="pilot-card-title">
             <p class="eyebrow">The usual starting point</p>
@@ -471,9 +492,10 @@
 
     <div class="credibility" aria-label="Business AI Systems principles">
       <div class="credibility-grid wrap">
-        <div class="credibility-item"><strong>UK-based</strong><span>Working with UK SMEs</span></div>
-        <div class="credibility-item"><strong>Evidence-led</strong><span>Decisions tied to useful outcomes</span></div>
-        <div class="credibility-item"><strong>Practical by design</strong><span>Systems people can actually use</span></div>
+        <div class="credibility-item"><strong>UK-based</strong><span>Focused on the needs of UK SMEs</span></div>
+        <div class="credibility-item"><strong>Founder-led</strong><span>Direct access from first call to review</span></div>
+        <div class="credibility-item"><strong>Evidence-led</strong><span>Progress measured in business terms</span></div>
+        <div class="credibility-item"><strong>Practical by design</strong><span>Built for the people doing the work</span></div>
       </div>
     </div>
 
@@ -616,8 +638,8 @@
           <a href="#approach">Approach</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
-          <a href="business-ai-systems-privacy.html">Privacy</a>
-          <a href="business-ai-systems-terms.html">Terms</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
         </nav>
       </div>
       <p class="copyright">&copy; 2026 Business AI Systems. All rights reserved.</p>
