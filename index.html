@@ -426,12 +426,13 @@
     @media (max-width: 37.99rem) {
       .nav-links { grid-template-columns: repeat(3, 1fr); }
       .nav-links a:nth-child(3) { display: none; }
-      h1 { font-size: clamp(2.75rem, 15vw, 4.35rem); }
+      h1 { font-size: clamp(2.75rem, 14vw, 4rem); }
       .hero { padding: 3.2rem 0 3rem; }
       .hero-actions { align-items: stretch; }
       .hero-actions .button:not(.button--text) { width: 100%; }
-      .outcome-strip { grid-template-columns: 1fr; }
-      .outcome-strip div { padding: .7rem 0; }
+      .outcome-strip { grid-template-columns: minmax(0, 1fr); }
+      .outcome-strip div { min-width: 0; padding: .7rem 0; }
+      .outcome-strip strong, .outcome-strip span { overflow-wrap: break-word; }
       .outcome-strip div + div { padding-left: 0; border-top: 1px solid var(--line-dark); border-left: 0; }
       .pilot-card { padding: 1.35rem; }
       .credibility-item { min-width: 0; }
