@@ -116,7 +116,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    html { color-scheme: dark; scroll-behavior: smooth; scroll-padding-top: 6rem; }
     body {
       margin: 0;
       color: var(--ink);
@@ -248,6 +248,19 @@
     .credibility-item strong { display: block; margin-bottom: .15rem; color: var(--forest); font-size: .9rem; }
     .credibility-item span { color: var(--muted); font-size: .82rem; }
 
+    .recognition { background: var(--paper); }
+    .recognition-grid { display: grid; gap: 1.25rem; }
+    .recognition-card { padding: 1.5rem; border: 1px solid var(--line); border-top: 3px solid var(--forest); border-radius: var(--radius-sm); background: var(--white); box-shadow: var(--shadow-soft); }
+    .recognition-card h3 { font-size: 1.15rem; }
+    .recognition-card p { margin: 0; color: var(--copy); font-size: .94rem; }
+
+    .pain { color: var(--white); background: var(--forest-deep); }
+    .pain .eyebrow { color: var(--cyan-pale); }
+    .pain .lead { color: var(--text-on-dark); }
+    .pain-list { display: grid; gap: 0; margin: 0; padding: 0; border-top: 1px solid var(--line-dark); list-style: none; }
+    .pain-list li { position: relative; padding: 1.15rem 0 1.15rem 2rem; border-bottom: 1px solid var(--line-dark); color: var(--text-on-dark); }
+    .pain-list li::before { content: ""; position: absolute; top: 1.7rem; left: .25rem; width: .65rem; height: .65rem; border: 2px solid var(--cyan); }
+
     section { padding: 5rem 0; }
     .section-head { display: grid; gap: 1rem; margin-bottom: 2.7rem; }
     .section-head .lead { margin-bottom: 0; }
@@ -273,6 +286,12 @@
     .evidence-card span { display: block; margin-bottom: 2.7rem; color: var(--sage); font-family: var(--serif); font-size: 1.2rem; }
     .evidence-card h3 { font-size: 1.15rem; }
     .evidence-card p { margin: 0; color: var(--text-on-dark-muted); font-size: .92rem; }
+    .example-pilot { display: grid; gap: 1.5rem; margin-top: 2rem; padding: 1.6rem; border: 1px solid #285276; border-left: 3px solid var(--cyan); border-radius: var(--radius-sm); background: var(--navy-soft); }
+    .example-pilot h3 { margin: 0; font-size: 1.35rem; }
+    .example-pilot p { margin: 0; color: var(--text-on-dark); }
+    .example-flow { display: grid; gap: .75rem; margin: 0; padding: 0; list-style: none; counter-reset: example-step; }
+    .example-flow li { display: grid; grid-template-columns: 1.7rem 1fr; gap: .7rem; color: var(--text-on-dark); font-size: .9rem; }
+    .example-flow li::before { counter-increment: example-step; content: counter(example-step); display: grid; width: 1.55rem; height: 1.55rem; place-items: center; border: 1px solid var(--cyan); color: var(--cyan); font-size: .72rem; font-weight: 700; }
 
     .process { background: var(--cream); }
     .process-grid { display: grid; gap: 1.5rem; }
@@ -309,6 +328,7 @@
     .field { display: grid; gap: .4rem; }
     .field label { color: var(--forest); font-size: .8rem; font-weight: 700; }
     .field input, .field textarea {
+      color-scheme: light;
       width: 100%;
       padding: .8rem .85rem;
       border: 1px solid var(--silver);
@@ -367,6 +387,7 @@
     .direct-links a, .footer-links a, .contact-details a { min-height: 44px; display: inline-flex; align-items: center; }
 
     @media (min-width: 38rem) {
+      .recognition-grid { grid-template-columns: repeat(2, 1fr); }
       .credibility-grid { grid-template-columns: repeat(2, 1fr); }
       .evidence-grid { grid-template-columns: repeat(3, 1fr); }
       .form-grid { grid-template-columns: repeat(2, 1fr); }
@@ -381,6 +402,10 @@
       .pilot-card { padding: 2.2rem; }
       section { padding: 7rem 0; }
       .section-head { grid-template-columns: 1fr 1fr; align-items: end; gap: 4rem; }
+      .pain-list { grid-template-columns: repeat(2, 1fr); }
+      .pain-list li:nth-child(odd) { padding-right: 2rem; border-right: 1px solid var(--line-dark); }
+      .pain-list li:nth-child(even) { padding-left: 3.5rem; }
+      .pain-list li:nth-child(even)::before { left: 1.75rem; }
       .service-list { grid-template-columns: repeat(2, 1fr); }
       .service:nth-child(odd) { padding-right: 2.5rem; border-right: 1px solid var(--line); }
       .service:nth-child(even) { padding-left: 2.5rem; }
@@ -434,7 +459,7 @@
         <a href="#approach">Approach</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <a class="button" href="https://businessaisystems.com/booking-8081">Book a discovery call</a>
+        <a class="button" href="https://businessaisystems.com/booking-8081">Discuss One Workflow</a>
       </div>
     </nav>
   </header>
@@ -445,18 +470,18 @@
         <div>
           <span class="availability">Founder-led consultancy for UK SMEs</span>
           <p class="eyebrow">Practical AI systems for growing businesses</p>
-          <h1>Turn operational friction into reliable flow.</h1>
-          <p class="lead">We design practical AI systems that help UK SMEs follow up opportunities, reduce repetitive work and use business information with more confidence.</p>
+          <h1>Stop missed follow-ups, scattered information and slow admin.</h1>
+          <p class="lead">Business AI Systems helps UK SMEs improve sales follow-up, customer enquiries, admin workflows, CRM organisation and commercial intelligence. We start with one focused pilot, prove whether it helps, then expand only if the evidence supports it.</p>
           <div class="outcome-strip" aria-label="Typical business outcomes">
             <div><strong>Faster follow-up</strong><span>Keep valuable opportunities moving</span></div>
             <div><strong>Less manual admin</strong><span>Give your team useful time back</span></div>
             <div><strong>Clearer information</strong><span>Make decisions with confidence</span></div>
           </div>
           <div class="hero-actions">
-            <a class="button" href="https://businessaisystems.com/booking-8081">Book a discovery call</a>
-            <a class="button button--text" href="#services">See where we can help</a>
+            <a class="button" href="https://businessaisystems.com/booking-8081">Discuss One Workflow To Improve</a>
+            <a class="button button--text" href="#services">Explore pilot starting points</a>
           </div>
-          <p class="hero-note">A direct first conversation with the founder. No pre-set package and no technical pitch.</p>
+          <p class="hero-note">On the first call, we look at one workflow, what slows it down and whether a small pilot is worth scoping. No technical pitch and no commitment to a large project.</p>
         </div>
 
         <div class="hero-visual">
@@ -484,23 +509,61 @@
       </div>
     </div>
 
+    <section class="recognition" aria-labelledby="recognition-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Who this is for</p>
+            <h2 id="recognition-title">Established UK businesses managing important work manually.</h2>
+          </div>
+          <p class="lead">A practical fit for growing SMEs and regional service businesses where opportunities, customer records or operational hand-offs are becoming harder to manage.</p>
+        </div>
+        <div class="recognition-grid">
+          <article class="recognition-card"><h3>Regular enquiries and quotes</h3><p>Regional service businesses handling a steady flow of new enquiries, estimates or proposals.</p></article>
+          <article class="recognition-card"><h3>Inconsistent follow-up</h3><p>Teams where good prospects can go quiet because ownership and next actions are unclear.</p></article>
+          <article class="recognition-card"><h3>Scattered working systems</h3><p>Important work managed across spreadsheets, inboxes, CRM records and manual reminders.</p></article>
+          <article class="recognition-card"><h3>More visibility, proportionate change</h3><p>Owners and managers who want a clearer view without taking on a big technology project.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pain" aria-labelledby="pain-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Common commercial leaks</p>
+            <h2 id="pain-title">Where Businesses Usually Lose Time &amp; Opportunities</h2>
+          </div>
+          <p class="lead">These problems rarely look dramatic on their own. Together, they create delays, missed revenue and too little management visibility.</p>
+        </div>
+        <ul class="pain-list">
+          <li>New enquiries are handled differently depending on who sees them first.</li>
+          <li>Quotes and prospects are not followed up consistently.</li>
+          <li>Customer information sits across inboxes, spreadsheets, CRM notes and people’s heads.</li>
+          <li>Managers cannot easily see what is stuck, overdue or worth acting on.</li>
+          <li>Teams spend too much time chasing, copying, checking and repeating admin.</li>
+          <li>Useful market or competitor information exists, but nobody has time to track it properly.</li>
+        </ul>
+      </div>
+    </section>
+
     <section class="services" id="services" aria-labelledby="services-title">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p class="eyebrow">What we improve</p>
-            <h2 id="services-title">Useful systems with a clear job to do.</h2>
+            <p class="eyebrow">Pilot starting points</p>
+            <h2 id="services-title">Choose one valuable workflow to improve first.</h2>
           </div>
-          <p class="lead">The right system should make work simpler, faster or more dependable. We focus on the areas where that improvement can matter commercially.</p>
+          <p class="lead">Most projects start with one of these focused pilot areas. The scope stays narrow, the intended result stays clear and the evidence guides what happens next.</p>
         </div>
 
         <div class="service-list">
-          <article class="service"><span class="service-number">01</span><div><h3>Sales follow-up systems</h3><p>Keep prospects moving with timely follow-up, organised context and clear prompts for your team.</p></div></article>
-          <article class="service"><span class="service-number">02</span><div><h3>Business process automation</h3><p>Reduce repetitive admin, manual hand-offs and avoidable chasing across everyday operations.</p></div></article>
-          <article class="service"><span class="service-number">03</span><div><h3>Customer enquiry handling</h3><p>Respond to common questions faster and route important conversations to the right person.</p></div></article>
-          <article class="service"><span class="service-number">04</span><div><h3>CRM and workflow organisation</h3><p>Create a dependable flow of customer information, ownership and next actions.</p></div></article>
-          <article class="service"><span class="service-number">05</span><div><h3>AI-assisted research and reporting</h3><p>Turn large amounts of information into useful summaries, reports and working insights.</p></div></article>
-          <article class="service"><span class="service-number">06</span><div><h3>Market and competitor intelligence</h3><p>Track relevant changes and surface evidence that supports better commercial decisions.</p></div></article>
+          <article class="service"><span class="service-number">01</span><div><h3>Sales follow-up systems</h3><p>Improve enquiry-to-quote and quote-to-decision follow-up with clear ownership, context and next actions.</p></div></article>
+          <article class="service"><span class="service-number">02</span><div><h3>Business process automation</h3><p>Reduce repetitive admin, manual hand-offs and avoidable chasing so the team has more useful capacity.</p></div></article>
+          <article class="service"><span class="service-number">03</span><div><h3>Customer enquiry handling</h3><p>Capture, categorise and route enquiries so important conversations do not disappear.</p></div></article>
+          <article class="service"><span class="service-number">04</span><div><h3>CRM and workflow organisation</h3><p>Give owners and managers a clearer view of what needs action, who owns it and what is overdue.</p></div></article>
+          <article class="service"><span class="service-number">05</span><div><h3>AI-assisted research and reporting</h3><p>Turn agreed information sources into structured summaries and reports that support faster decisions.</p></div></article>
+          <article class="service"><span class="service-number">06</span><div><h3>Market and competitor intelligence</h3><p>Track public signals, competitor movement, planning activity, tenders or target accounts so opportunities are easier to spot.</p></div></article>
         </div>
       </div>
     </section>
@@ -519,6 +582,19 @@
           <article class="evidence-card"><span>02</span><h3>A useful measure</h3><p>Define success in business terms, such as response time, consistency, capacity or visibility.</p></article>
           <article class="evidence-card"><span>03</span><h3>A sensible decision</h3><p>Use evidence from the pilot to refine, expand, pause or take a different route.</p></article>
         </div>
+        <article class="example-pilot">
+          <div>
+            <p class="eyebrow">Anonymised example pilot</p>
+            <h3>A specialist service business wants a clearer view of potential prospects.</h3>
+          </div>
+          <p>Business AI Systems can help the team monitor agreed public commercial signals and potential prospects, organise the findings into a structured view, and decide which opportunities deserve follow-up.</p>
+          <ol class="example-flow">
+            <li>Agree the public sources and commercial signals worth monitoring.</li>
+            <li>Organise relevant findings into a consistent working view.</li>
+            <li>Help the team assess what deserves a timely follow-up.</li>
+          </ol>
+          <p>We agree one workflow, one objective and one way to judge usefulness. If a pilot does not create enough value, we stop or change direction. If AI is not useful for the problem, Neville will say so.</p>
+        </article>
       </div>
     </section>
 
@@ -553,6 +629,7 @@
           <p class="eyebrow">A direct, founder-led service</p>
           <h2 id="about-title">Practical thinking, commercially grounded.</h2>
           <p class="lead">Business AI Systems is led by Neville Whitnall. He works directly with business owners and teams to understand where work gets stuck, what improvement is worth pursuing and how a practical system can help.</p>
+          <p>Neville has spent the last three years studying how AI can be applied practically inside real businesses, with a focus on useful systems rather than hype or unnecessary complexity.</p>
           <p class="founder-principle">“The aim is not to add more technology. It is to make an important part of the business work better.”</p>
           <p>Every recommendation starts with the business context. The result should be useful to the people doing the work, understandable to the people making the investment and proportionate to the opportunity.</p>
           <div class="direct-links">
@@ -568,14 +645,14 @@
         <div class="contact-copy">
           <p class="eyebrow">Start a useful conversation</p>
           <h2 id="contact-title">What workflow would you like to improve?</h2>
-          <p class="lead">Tell us where work is slow, inconsistent or hard to manage. Neville will reply directly to explore whether a focused pilot makes sense.</p>
+          <p class="lead">Tell us where work is slow, inconsistent or hard to manage. On the first call, we look at one workflow, what slows it down and whether a small pilot is worth scoping. There is no technical pitch and no commitment to a large project.</p>
           <div class="contact-details">
             <a href="mailto:neville@businessaisystems.com">neville@businessaisystems.com</a>
             <a href="tel:+447473531524">07473 531524</a>
             <small>UK-based, working with UK SMEs</small>
           </div>
           <div class="hero-actions">
-            <a class="button button--light" href="https://businessaisystems.com/booking-8081">Book a discovery call</a>
+            <a class="button button--light" href="https://businessaisystems.com/booking-8081">Explore A Focused Pilot</a>
           </div>
         </div>
 
@@ -599,7 +676,7 @@
             </div>
           </div>
           <div class="form-actions">
-            <button class="button" type="submit">Prepare email enquiry</button>
+            <button class="button" type="submit">Email Neville About This Workflow</button>
           </div>
           <p class="form-note">Submitting opens an email in your usual email app, ready for you to review and send. If that does not work, email neville@businessaisystems.com directly.</p>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
